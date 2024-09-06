@@ -1,7 +1,7 @@
 const Page = () => {
   return (
     <div>
-      <h1>Page</h1>
+      <section className="w-[1200px] mx-auto">Categories</section>
     </div>
   );
 };
