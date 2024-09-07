@@ -1,7 +1,9 @@
+import Tabs from "../components/Tabs";
+
 const Page = () => {
   return (
     <div>
-      <section className="w-[1200px] mx-auto">Categories</section>
+      <Tabs />
     </div>
   );
 };

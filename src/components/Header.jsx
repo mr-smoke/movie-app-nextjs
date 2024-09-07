@@ -1,5 +1,6 @@
 import { SiThemoviedatabase } from "react-icons/si";
 import { IoSearch } from "react-icons/io5";
+import Theme from "./Theme";
 
 const Header = () => {
   return (
@@ -16,6 +17,7 @@ const Header = () => {
           placeholder="Search"
         />
       </div>
+      <Theme />
     </header>
   );
 };
