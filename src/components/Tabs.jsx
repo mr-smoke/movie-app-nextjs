@@ -8,7 +8,7 @@ const Tabs = () => {
 
   const genres = [
     { name: "Popular Movies", value: "popular" },
-    { name: "Latest Movies", value: "latest" },
+    { name: "Top Rated", value: "top_rated" },
     { name: "Upcoming Movies", value: "upcoming" },
   ];
 
