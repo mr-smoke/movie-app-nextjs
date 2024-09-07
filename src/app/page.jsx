@@ -1,3 +1,4 @@
+import MovieCard from "@/components/MovieCard";
 import Tabs from "../components/Tabs";
 
 const Page = async ({ searchParams }) => {
@@ -22,12 +23,11 @@ const Page = async ({ searchParams }) => {
   return (
     <div>
       <Tabs />
-      {data?.results?.map((movie) => (
-        <div key={movie.id}>
-          <h2>{movie.title}</h2>
-          <p>{movie.overview}</p>
-        </div>
-      ))}
+      <section className="flex flex-wrap justify-center gap-12 p-12">
+        {data?.results?.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
+      </section>
     </div>
   );
 };
