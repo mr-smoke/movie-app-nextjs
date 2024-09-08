@@ -23,13 +23,16 @@ const Page = async ({ params }) => {
             src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
             alt={data.title}
           />
-          <div className="w-6/12 bg-slate-700 rounded-r-lg flex flex-col justify-center gap-4 p-4 overflow-auto">
+          <div className="w-6/12 dark:bg-slate-700 bg-gray-100 rounded-r-lg flex flex-col justify-center gap-4 p-4 overflow-auto">
             <p className="text-lg">{data.overview}</p>
             <p>Release Date: {data.release_date}</p>
             <p>Average Vote: {data.vote_average.toString().slice(0, 3)}</p>
             <div className="flex justify-center gap-4">
               {data.genres.map((genre, id) => (
-                <span className="p-2 border rounded-lg bg-cyan-900" key={id}>
+                <span
+                  className="p-2 border rounded-lg dark:bg-cyan-900 bg-slate-300"
+                  key={id}
+                >
                   {genre.name}
                 </span>
               ))}

@@ -1,7 +1,7 @@
 import { SiThemoviedatabase } from "react-icons/si";
-import { IoSearch } from "react-icons/io5";
 import Theme from "./Theme";
 import Link from "next/link";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
@@ -12,14 +12,7 @@ const Header = () => {
           <h1 className="font-extrabold font-mono text-xl">Movie App</h1>
         </div>
       </Link>
-      <div className="flex items-center border rounded h-13 flex-1">
-        <IoSearch className="m-4 text-xl" />
-        <input
-          className="outline-none flex-1 h-full text-lg"
-          type="text"
-          placeholder="Search"
-        />
-      </div>
+      <SearchBar />
       <Theme />
     </header>
   );

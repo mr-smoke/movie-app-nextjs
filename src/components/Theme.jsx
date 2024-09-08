@@ -4,11 +4,9 @@ import { useEffect, useState } from "react";
 
 const Theme = () => {
   const [mounted, setMounted] = useState(false);
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => setMounted(true), []);
-
-  const themeMode = theme === "system" ? systemTheme : theme;
 
   return (
     <>
