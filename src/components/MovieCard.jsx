@@ -1,6 +1,13 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 const MovieCard = ({ movie }) => {
+  const router = useRouter();
   return (
-    <div className="flex w-96 rounded-lg relative group">
+    <div
+      onClick={() => router.push(`/movie/${movie.id}`)}
+      className="flex w-96 rounded-lg relative group cursor-pointer"
+    >
       <img
         className="rounded-lg"
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
