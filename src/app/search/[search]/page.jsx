@@ -7,8 +7,7 @@ const Page = async ({ params }) => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYTc1NzhjZjU4MTE2MDdhZGFlZDk1ZWM0ZjRhOTc5NiIsIm5iZiI6MTcyNTY5MjU1MS4wNDc3ODksInN1YiI6IjY2MjNjNTYwMmRkYTg5MDE4N2UwYzVlOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.m-_bu2ZayI2UtLRBHuRS9-KTl9523t-CT3PvjK5UQCo",
+      Authorization: process.env.NEXT_PUBLIC_API_KEY,
     },
   };
 
@@ -18,8 +17,6 @@ const Page = async ({ params }) => {
   );
 
   const data = await res.json();
-
-  console.log(data);
 
   return (
     <section className="flex flex-wrap justify-center gap-12 p-12">

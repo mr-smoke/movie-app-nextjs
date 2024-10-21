@@ -12,6 +12,7 @@ const SearchBar = () => {
     if (search) {
       router.push(`/search/${search}`);
     }
+    setSearch("");
   };
 
   return (

@@ -4,8 +4,7 @@ const Page = async ({ params }) => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYTc1NzhjZjU4MTE2MDdhZGFlZDk1ZWM0ZjRhOTc5NiIsIm5iZiI6MTcyNTY5MjU1MS4wNDc3ODksInN1YiI6IjY2MjNjNTYwMmRkYTg5MDE4N2UwYzVlOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.m-_bu2ZayI2UtLRBHuRS9-KTl9523t-CT3PvjK5UQCo",
+      Authorization: process.env.NEXT_PUBLIC_API_KEY,
     },
   };
 
@@ -17,13 +16,13 @@ const Page = async ({ params }) => {
     <section className="flex justify-center p-12">
       <div className="text-center">
         <h1 className="font-bold text-3xl pb-4">{data.title}</h1>
-        <div className="flex">
+        <div className="flex flex-col md:flex-row rounded-lg overflow-hidden">
           <img
-            className="w-6/12 rounded-l-lg"
+            className="md:w-6/12 md:rounded-l-lg"
             src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
             alt={data.title}
           />
-          <div className="w-6/12 dark:bg-slate-700 bg-gray-100 rounded-r-lg flex flex-col justify-center gap-4 p-4 overflow-auto">
+          <div className="md:w-6/12 dark:bg-slate-700 bg-gray-100 md:rounded-r-lg flex flex-col justify-center gap-4 p-4 overflow-auto">
             <p className="text-lg">{data.overview}</p>
             <p>Release Date: {data.release_date}</p>
             <p>Average Vote: {data.vote_average.toString().slice(0, 3)}</p>
@@ -37,11 +36,11 @@ const Page = async ({ params }) => {
                 </span>
               ))}
             </div>
-            <button className="p-4 border rounded-lg hover:opacity-50">
-              <a href={data.homepage} target="_blank">
+            <a href={data.homepage} target="_blank">
+              <button className="p-4 border rounded-lg hover:opacity-50 w-full">
                 Page
-              </a>
-            </button>
+              </button>
+            </a>
           </div>
         </div>
       </div>
